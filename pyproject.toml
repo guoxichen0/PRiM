@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "prim-score"
+version = "0.1.0"
+description = "PRiM-score methods for multiple root-cause identification under mean-shift interventions"
+readme = "README.md"
+requires-python = ">=3.10"
+# License and author metadata are intentionally omitted until final release.
+# license = {file = "LICENSE"}
+# authors = [{name = "AUTHOR NAME"}]
+dependencies = [
+  "numpy>=1.24",
+  "pandas>=2.0",
+  "scikit-learn>=1.2",
+  "causal-learn>=0.1.4.5",
+  "xges>=0.1.0",
+]
+
+[project.optional-dependencies]
+notears = [
+  "torch>=2.0",
+  "notears @ git+https://github.com/xunzheng/notears.git",
+]
+
+[tool.setuptools.packages.find]
+include = ["prim_score*"]
+
